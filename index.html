@@ -285,14 +285,15 @@
             prayerTime.setHours(15, 0, 0); // 3:00 PM
             
             if (now > prayerTime) {
-                document.getElementById('clock').innerHTML = "<strong>Combined prayer time has begun.</strong><br>Please join in spirit with Christ's healing power.";
+                document.getElementById('clock').innerHTML = "<strong>Prayer time has begun</strong><br>Join in spirit with Christ's healing power";
             } else {
                 const diff = prayerTime - now;
                 const hours = Math.floor(diff / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
                 
-                document.getElementById('clock').innerHTML = `<strong>Time until combined prayer:</strong><br>${hours}h ${minutes}m ${seconds}s`;
+                // Show only the time values without the label
+                document.getElementById('clock').innerHTML = `<strong>${hours}h ${minutes}m ${seconds}s</strong><br>until combined prayer`;
             }
         }
 
