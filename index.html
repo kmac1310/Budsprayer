@@ -219,7 +219,8 @@
     </div>
 
     <div class="combined-prayer">
-        Please join us at 3:00 PM today for a combined prayer session for Bud in the name of Jesus Christ. Together, our faith will magnify His healing power.
+        <div>Please join us at 3:00 PM today for a combined prayer session</div> 
+        <div>for Bud in the name of Jesus Christ.</div>
     </div>
 
     <div id="energyEffect" class="energy-effect"></div>
@@ -284,14 +285,14 @@
             prayerTime.setHours(15, 0, 0); // 3:00 PM
             
             if (now > prayerTime) {
-                document.getElementById('clock').textContent = "Combined prayer time has begun. Please join in spirit.";
+                document.getElementById('clock').innerHTML = "<strong>Combined prayer time has begun.</strong><br>Please join in spirit with Christ's healing power.";
             } else {
                 const diff = prayerTime - now;
                 const hours = Math.floor(diff / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
                 
-                document.getElementById('clock').textContent = `Time until combined prayer: ${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById('clock').innerHTML = `<strong>Time until combined prayer:</strong><br>${hours}h ${minutes}m ${seconds}s`;
             }
         }
 
